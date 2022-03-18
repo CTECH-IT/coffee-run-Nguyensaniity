@@ -1,13 +1,13 @@
 (function (window) {
     'use strict' ;
 
-    
+
 let App = window.App || {};
 
-function DatStore() {
+function DataStore() {
     console. log('Running the DatStore Function...')
 }
 
-App.DatStore = DataStore;
+App.DataStore = DataStore;
 window.App = App;
 })(window);
