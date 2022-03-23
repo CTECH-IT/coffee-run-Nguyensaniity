@@ -18,6 +18,16 @@
         this.db.remove(customerId);
     }
 
+    Truck.prototype.printOrders = function() {
+
+        //first, get all the email addresses (keys)
+        let customerIdArray = Object.keys(this.db.getAll());
+        //go through the list of emails and get the associated order
+        customerIdArray.forEach(function (id) {
+          console.log(this.db.get(id));    
+        });
+    }
+    
     App.Truck = Truck;
     window.App = App; 
 
