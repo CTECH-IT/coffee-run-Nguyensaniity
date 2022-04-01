@@ -1,7 +1,7 @@
 (function (window) {
     'use strict';
 
-    let App = window.App
+    let App = window.App || {};
     let $ = window.jQuery;
 
     function FormHandler() {
