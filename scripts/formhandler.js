@@ -31,6 +31,8 @@
             });
             console.log(data);
             func(data); //call the function that was passed in on the data form
+
+            this.reset(); //reset the form
         });
     };
 
