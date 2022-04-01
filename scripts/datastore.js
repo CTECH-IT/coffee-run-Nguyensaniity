@@ -4,6 +4,10 @@
 
     let App = window.App || {};
 
+    function FormHandler() {
+        //
+    }
+
     function DataStore() {
         this.data = {};
     }
