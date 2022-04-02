@@ -2,12 +2,13 @@
     'use strict';
 
     const FORM_SELECTOR = '[data-coffee-order="form"]'
-
+    const CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
     //Let's make sure we only have on of these:
     let app = window.App;
     let Truck = App.Truck
     let DataStore = App.DataStore;
     let FormHandler = App.FormHandler
+    let Checklist = App.Checklist;
 
     let myTruck = new Truck('1234', new DataStore());
 
