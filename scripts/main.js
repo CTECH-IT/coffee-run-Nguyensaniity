@@ -13,7 +13,7 @@
 
     let myTruck = new Truck('1234', new DataStore());
     let checkList = new CheckList(CHECKLIST_SELECTOR);
-    
+
     window.myTruck = myTruck;
 
     //find the form that is being submitted and create a formHander object
