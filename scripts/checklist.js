@@ -19,6 +19,14 @@
                 .remove();
         };
 
+        CheckList.prototype.addClickHandler = function(func) {
+            this.$element.on('click', 'input', function (event) {
+                var email = event.target.value;
+                this.removeRow(email);
+                func(email);
+            }.bind(this));
+        };
+
         // The method that adds a new row to the checklist
         CheckList.prototype.addRow = function (coffeeOrder) {
             //Remove any existing rows that match the email address
