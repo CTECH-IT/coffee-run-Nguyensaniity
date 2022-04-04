@@ -14,9 +14,9 @@
         //remove a row identified by an email address
         CheckList.prototype.removeRow = function (email) {
             this.$element
-               .find('[value="' + email + '"]')    
-               .closest('[data-coffee-order="checkbox"]')
-               .remove();     
+                .find('[value="' + email + '"]')
+                .closest('[data-coffee-order="checkbox"]')
+                .remove();
         };
 
         // The method that adds a new row to the checklist
@@ -41,23 +41,22 @@
                 type: 'checkbox',
                 value: coffeeOrder.emailAddress
             });
+            let description = coffeeOrder.size + ' ';
+            if (coffeeOrder.flavor) {
+                description += coffeeOrder.flavor + ' ';
+            }
+            description += coffeeOrder.coffee + ', '
+            description += ' (' + coffeeOrder.emailAddress + ')';
+            description += '[ ' + coffeeOrder.strength + 'x]';
+
+            $label.append($checkbox);
+            $label.append(description);
+            $div.append($label);
+
+            this.$element = $div;
         }
     }
 
-    let description = coffeeOrder.size + ' ';
-    if (coffeeOrder.flavor) {
-        description += coffeeOrder.flavor + ' ';
-    
-    description += coffeeOrder.coffee + ', '
-    description += ' (' + coffeeOrder.emailAddress + ')';
-    description += '[ ' + coffeeOrder.strength + 'x]';
-
-    $label.append($checkbox);
-    $label.append(description);
-    $div.append($label);
-
-    this.$element = $div;
-    }
 
     App.CheckList = CheckList;
     window.App = App;
