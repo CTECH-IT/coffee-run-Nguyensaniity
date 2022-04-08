@@ -29,12 +29,18 @@
                 data[item.name] = item.value;
                 console.log(item.name + ' is ' + item.value);
             });
+
             console.log(data);
             func(data); //call the function that was passed in on the data form
 
             this.reset(); //reset the form
             this.elements[0].focus(); //focus on the first field
         });
+    };
+
+    FormHandler.prototype.addInputHandler = function (func) {
+        console.log('Setting input hndler for form');
+        this.$formElement.on('input', '[name="emailAddress"]')
     };
 
     App.FormHandler = FormHandler;
