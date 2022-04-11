@@ -20,7 +20,7 @@
     //Add an event handler for the Submit button and pass in creatOrder as a prarameter(func)
     FormHandler.prototype.addSubmitHandler = function (func) {
         console.log('Setting the submit handler for the form...');
-        this.$formElement.on('submit', function(event) {
+        this.$formElement.on('submit', function (event) {
             event.preventDefault();
 
             //copy all the info from the form fields into the variable called data
@@ -40,7 +40,14 @@
 
     FormHandler.prototype.addInputHandler = function (func) {
         console.log('Setting input hndler for form');
-        this.$formElement.on('input', '[name="emailAddress"]')
+        this.$formElement.on('input', '[name="emailAddress"]', function (event) {
+            let emailAddress = event.target.value;
+            if (func(emailAddress) == true) { // use validation.js to check email
+                event.target.setCustomValidity('');
+            } else {
+                event.target.setCustomValidity(emailAddress + ' is not an authorized email address!')
+            }
+        });
     };
 
     App.FormHandler = FormHandler;
