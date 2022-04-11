@@ -10,6 +10,7 @@
     let DataStore = App.DataStore;
     let FormHandler = App.FormHandler
     let CheckList = App.CheckList;
+    let Validation = App.Validation;
 
     let myTruck = new Truck('1234', new DataStore());
 
@@ -19,7 +20,6 @@
     let formHandler = new FormHandler(FORM_SELECTOR);
     //find the checklist that is being updated and create a ChekList obkect
     let checkList = new CheckList(CHECKLIST_SELECTOR);
-
     //when a checkbox is clicked call "deliverOrder" on myTruck
     checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
 
@@ -28,5 +28,8 @@
         myTruck.createOrder.call(myTruck, data);
         checkList.addRow.call(checkList, data);
     });
+
+// add the emaill validator to the email input field
+formHandler.addInputHandler(Validation.isCompanyEmail);
 
 })(window);
