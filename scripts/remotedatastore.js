@@ -15,14 +15,16 @@
         $.post(this.serverUrl, val, function (serverResponse) {
             console.log(serverResponse);
         });
+    };
     RemoteDataStore.prototype.getAll = function () {
-        // mage a "get" call to the surver URL
-        // pass in an anonymouse function that does something with the data
+        // make a "get" call to the server URL
+        // pass in an anonymouse function that calls the "cb" callback function
         $.get(this.serverUrl, function (serverResponse) {
             console.log(serverResponse);
+            cb(serverResponse);
         });
-    }
     };
+    
 
     App.RemoteDataStore = RemoteDataStore;
     window.App = App;
