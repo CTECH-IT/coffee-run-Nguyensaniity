@@ -16,7 +16,6 @@
             console.log(serverResponse);
         });
     };
-    
     RemoteDataStore.prototype.getAll = function (cb) {
         // make a "get" call to the server URL
         // pass in an anonymouse function that calls the "cb" callback function
@@ -34,6 +33,11 @@
             console.log(serverResponse);
             cb(serverResponse);
         });
+    };
+
+    RemoteDataStore.prototype.remove = function (key) {
+        //call the server url using the ajax 'DELETE' command
+        $.ajax(this.serverUrl + '?emailAddress=' + key, {type: 'DELETE' });
     };
 
     App.RemoteDataStore = RemoteDataStore;
