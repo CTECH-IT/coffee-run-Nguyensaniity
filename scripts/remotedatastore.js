@@ -16,7 +16,8 @@
             console.log(serverResponse);
         });
     };
-    RemoteDataStore.prototype.getAll = function () {
+    
+    RemoteDataStore.prototype.getAll = function (cb) {
         // make a "get" call to the server URL
         // pass in an anonymouse function that calls the "cb" callback function
         $.get(this.serverUrl, function (serverResponse) {
@@ -25,6 +26,15 @@
         });
     };
     
+    RemoteDataStore.prototype.get = function (key, cb) {
+        //make a get call to the server, but pass an email address
+        //so that it returns just one order
+        //then call the fucntion"cb" on the response
+        $.get(this.serverUrl + '?emailAddress=' + key, function (serverResponse) {
+            console.log(serverResponse);
+            cb(serverResponse);
+        });
+    };
 
     App.RemoteDataStore = RemoteDataStore;
     window.App = App;
