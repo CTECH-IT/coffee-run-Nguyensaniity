@@ -15,7 +15,7 @@
         CheckList.prototype.removeRow = function (email) {
             this.$element
                 .find('[value="' + email + '"]')
-                .closest('[data-coffee-order="checkbox"]')
+                .closest('[data-keyboard-order="checkbox"]')
                 .remove();
         };
 
@@ -28,34 +28,34 @@
         };
 
         // The method that adds a new row to the checklist
-        CheckList.prototype.addRow = function (coffeeOrder) {
+        CheckList.prototype.addRow = function (keyboardOrder) {
             //Remove any existing rows that match the email address
-            this.removeRow(coffeeOrder.emailAddress);
+            this.removeRow(keyboardOrder.emailAddress);
             //Create a new instance of a row, using the coffee order info
-            var rowElement = new Row(coffeeOrder);
+            var rowElement = new Row(keyboardOrder);
             // Add the new ro instance's $element property to the checklist
             this.$element.append(rowElement.$element);
         };
 
         //Each row is one outstanding order
-        function Row(coffeeOrder) {
+        function Row(keyboardOrder) {
             let $div = $('<div></div>', {
-                'data-coffee-order': 'checkbox',
+                'data-keyboard-order': 'checkbox',
                 'class': 'checkbox'
             });
             let $label = $('<label></label>');
 
             let $checkbox = $('<input></input>', {
                 type: 'checkbox',
-                value: coffeeOrder.emailAddress
+                value: keyboardOrder.emailAddress
             });
-            let description = coffeeOrder.size + ' ';
-            if (coffeeOrder.flavor) {
-                description += coffeeOrder.flavor + ' ';
+            let description = keyboardOrder.size + ' ';
+            if (keyboardOrder.flavor) {
+                description += keyboardOrder.flavor + ' ';
             }
-            description += coffeeOrder.coffee + ', '
-            description += ' (' + coffeeOrder.emailAddress + ')';
-            description += '[ ' + coffeeOrder.strength + 'x]';
+            description += keyboardOrder.coffee + ', '
+            description += ' (' + keyboardOrder.emailAddress + ')';
+            description += '[ ' + keyboardOrder.strength + 'x]';
 
             $label.append($checkbox);
             $label.append(description);
