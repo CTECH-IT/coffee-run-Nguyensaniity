@@ -15,13 +15,29 @@
         $.post(this.serverUrl, val, function (serverResponse) {
             console.log(serverResponse);
         });
-    RemoteDataStore.prototype.getAll = function () {
-        // mage a "get" call to the surver URL
-        // pass in an anonymouse function that does something with the data
+    };
+    RemoteDataStore.prototype.getAll = function (cb) {
+        // make a "get" call to the server URL
+        // pass in an anonymouse function that calls the "cb" callback function
         $.get(this.serverUrl, function (serverResponse) {
             console.log(serverResponse);
+            cb(serverResponse);
         });
-    }
+    };
+    
+    RemoteDataStore.prototype.get = function (key, cb) {
+        //make a get call to the server, but pass an email address
+        //so that it returns just one order
+        //then call the fucntion"cb" on the response
+        $.get(this.serverUrl + '?emailAddress=' + key, function (serverResponse) {
+            console.log(serverResponse);
+            cb(serverResponse);
+        });
+    };
+
+    RemoteDataStore.prototype.remove = function (key) {
+        //call the server url using the ajax 'DELETE' command
+        $.ajax(this.serverUrl + '?emailAddress=' + key, {type: 'DELETE' });
     };
 
     App.RemoteDataStore = RemoteDataStore;
