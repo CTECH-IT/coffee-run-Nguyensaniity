@@ -13,14 +13,14 @@
 
 <body class="container">
   <header>
-    <h1>CoffeeRun</h1>
+    <h1>Keyboards</h1>
   </header>
   <div class="card card-default">
     <div class="card-body">
       <form data-coffee-order="form">
         <div class="form-group">
-          <label>Coffee Order</label>
-          <input class="form-control" name="coffee" id="coffeeOrder" 
+          <label>KeyBoards</label>
+          <input class="form-control" name="keyboard" id="keyboardOrder" 
                  autofocus required pattern= "[a-zA-Z\s]+">
         </div>
         <div class="form-group">
@@ -45,12 +45,12 @@
               </label>
             </div>
             <div class="form-group">
-              <label for="flavorShot">flavorShot</label>
-              <select id="flavorShot" class="form-control" name="flavor">
-                <option value="">None</option>
-                <option value="caramel">Caramel</option>
-                <option value="almond">Almond</option>
-                <option value="mocha">Mocha</option>
+              <label for="Amount">Amount</label>
+              <select id="Amount" class="form-control" name="Amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select>
             </div>
             <div class="form-group">
@@ -68,7 +68,7 @@
   <div class="card card-default"></div>
     <div class="card-body">
       <h4> Pending Orders:</h4>
-      <div data-coffee-order="checklist">
+      <div data-keyboard-order="checklist">
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
   <script src="scripts/validation.js" charset="utf-8"></script>
   <script src="scripts/checklist.js" charset="utf-8"></script>
   <script src="scripts/formhandler.js" charset="utf-8"></script>
-  <script src="scripts/remotedatastore.js" charset="utf-8"
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
   <script src="scripts/datastore.js" charset="utf-8"></script>
   <script src="scripts/truck.js" charset="utf-8"></script>
   <script src="scripts/main.js"></script>
