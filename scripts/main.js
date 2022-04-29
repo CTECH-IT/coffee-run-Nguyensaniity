@@ -1,8 +1,8 @@
 (function(window) {
     'use strict';
 
-    const FORM_SELECTOR = '[data-coffee-order="form"]'
-    const CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
+    const FORM_SELECTOR = '[data-keyboard-order="form"]'
+    const CHECKLIST_SELECTOR = '[data-keyboard-order="checklist"]';
     const SERVER_URL = 'http://saturn.rochesterschool.org:8080/json';
 
     //Let's make sure we only have on of these:
