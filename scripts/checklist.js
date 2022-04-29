@@ -49,13 +49,14 @@
                 type: 'checkbox',
                 value: keyboardOrder.emailAddress
             });
-            let description = keyboardOrder.size + ' ';
-            if (keyboardOrder.flavor) {
-                description += keyboardOrder.flavor + ' ';
+            let description = keyboardOrder.amount + ' ';
+            if (keyboardOrder.amount) {
+                description += keyboardOrder.amount+ ' ';
             }
-            description += keyboardOrder.coffee + ', '
+            description += keyboardOrder.amount + ', '
             description += ' (' + keyboardOrder.emailAddress + ')';
-            description += '[ ' + keyboardOrder.strength + 'x]';
+            
+
 
             $label.append($checkbox);
             $label.append(description);
