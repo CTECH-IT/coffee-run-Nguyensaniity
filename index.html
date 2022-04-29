@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css ">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="stylesheets/styles.css">
-  
+
 </head>
 
 <body class="container">
@@ -21,64 +21,75 @@
         <div class="form-group">
           <label>KeyBoards:</label>
 
-        <div class="checkbox">
-          <input type="checkbox" id="huntsman1" name="huntsman1">
-      <label for="huntsman1">Huntsman Mini [White]</label>
-      <img src="photos\Keyboards/huntmanwhite.jpg"
-                width="300" height="300"> 
-        <div class="form-group">
-          <label for="Amount">Amount</label>
-          <select id="Amount" class="form-control" name="Amount">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
+          <div class="checkbox">
+            <input type="checkbox" id="huntsman1" name="huntsman1">
+            <label for="huntsman1">Huntsman Mini [White]</label>
+            <img src="photos\Keyboards/huntmanwhite.jpg" width="300" height="300">
+            <div class="form-group">
+              <label for="Amount">Amount</label>
+              <select id="Amount" class="form-control" name="Amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
 
-        <div>
-      <input type="checkbox" id="logitech" name="logitech">
-      <label for="logitech">Logitech Wireless</label>
-      <img src="photos\Keyboards/tech.jpg"
-                width ="230" height="110">         
-        </div>
-        
-        <div class="form-group">
-          <label for="Amount">Amount</label>
-          <select id="Amount" class="form-control" name="Amount">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
+            <div class="checkbox">
+              <input type="checkbox" id="logitech" name="logitech">
+              <label for="logitech">Logitech Wireless</label>
+              <img src="photos\Keyboards/tech.jpg" width="230" height="110">
+            </div>
+            <div class="form-group">
+              <label for="Amount">Amount</label>
+              <select id="Amount" class="form-control" name="Amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
 
-        <div class="form-group">
-          <label for="emailInput">Email</label>
-          <input class="form-control" type="email" name="emailAddress" id="emailInput" value=""
-            placeholder="user@company.com">
-        </div>
+            <div class="checkbox">
+              <input type="checkbox" id="RGB Mech" name="RGB Mech">
+              <label for=" RGB Mech"> RGB Mechanical Keyboard [Black] </label>
+              <img src="photos\Keyboards/mech.jpg" width="200" height="170">
+              <div class="form-group">
+                <label for="Amount">Amount</label>
+                <select id="Amount" class="form-control" name="Amount">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
 
-          
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-secondary">Reset</button>
+
+              <div class="form-group">
+                <label for="emailInput">Email</label>
+                <input class="form-control" type="email" name="emailAddress" id="emailInput" value=""
+                  placeholder="user@company.com">
+              </div>
+
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
       </form>
     </div>
   </div>
 
   <!-- the checklist-->
   <div class="card card-default"></div>
-    <div class="card-body">
-      <h4> Pending Orders:</h4>
-      <div data-keyboard-order="checklist">
-      </div>
+  <div class="card-body">
+    <h4> Pending Orders:</h4>
+    <div data-keyboard-order="checklist">
     </div>
   </div>
+  </div>
 
-</section>
+  </section>
 
-  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
-              charset="utf-8"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
   <script src="scripts/validation.js" charset="utf-8"></script>
   <script src="scripts/checklist.js" charset="utf-8"></script>
   <script src="scripts/formhandler.js" charset="utf-8"></script>
