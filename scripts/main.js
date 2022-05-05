@@ -19,7 +19,7 @@
 
     remoteDS.getAll((data)=>{
         for(let value of Object.values(data)){ //loop through the values remote data objeect
-            if(value.hasOwnProperty("keyboard")) {    
+            if(value.hasOwnProperty("keyboardOrder")) {    
           checkList.addRow(value) //add checklist row based on data 
         }
       }
