@@ -41,7 +41,7 @@
         function Row(keyboardOrder) {
             let $div = $('<div></div>', {
                 'data-keyboard-order': 'checkbox',
-                'class': 'Checkbox'
+                'class': 'Checklist'
             });
             let $label = $('<label></label>');
 
