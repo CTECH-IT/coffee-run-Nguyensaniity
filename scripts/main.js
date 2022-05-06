@@ -17,15 +17,6 @@
     //remote database where we store orders
     let remoteDS = new RemoteDataStore(SERVER_URL);
 
-    remoteDS.getAll((data)=>{
-        for(let value of Object.values(data)){ //loop through the values remote data objeect
-            if(value.hasOwnProperty("keyboardOrder")) {    
-          checkList.addRow(value) //add checklist row based on data 
-        }
-      }
-    });
-      
-
     let myTruck = new Truck('1234', remoteDS);
 
     window.myTruck = myTruck;
