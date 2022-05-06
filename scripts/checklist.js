@@ -14,7 +14,7 @@
         //remove a row identified by an email address
         CheckList.prototype.removeRow = function (email) {
             this.$element
-                .find('[keyboardOrder="' + email + '"]')
+                .find('[value="' + email + '"]')
                 .closest('[data-keyboard-order="checkbox"]')
                 .remove();
         };
@@ -41,7 +41,7 @@
         function Row(keyboardOrder) {
             let $div = $('<div></div>', {
                 'data-keyboard-order': 'checkbox',
-                'class': 'Checklist'
+                'class': 'checkbox'
             });
             let $label = $('<label></label>');
 
@@ -51,7 +51,7 @@
             });
             let description = keyboardOrder.amount + ' ';
             if (keyboardOrder.amount) {
-                description += keyboardOrder.keyboard + ' ';
+                description += keyboardOrder.name + ' ';
             }
             description += keyboardOrder.amount + ', '
             description += ' (' + keyboardOrder.emailAddress + ')';
